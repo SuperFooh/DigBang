@@ -1,0 +1,36 @@
+/** dimensiones del wireframe 715 x 690 **/
+:root{
+    --aspect-ratio: 1.0362318840579710144927536231884;
+}
+
+.app{
+    display: block;
+    min-width: 500px;
+    height: 70%;
+    max-height: 70vh; /*preserve aspect ratio*/
+    max-width: calc(70vh * var(--aspect-ratio));
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 3rem;
+    background: rgb(0,59,103); /*fallback*/
+    background: 
+        linear-gradient(0deg, #003b67,#074f84 100%  0%);
+}
+
+.container{
+    background-color: #003b67;
+    width: 100%;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: 700;
+    padding: 1em 0;
+    text-align: center;
+    color: #fffffd;
+}
