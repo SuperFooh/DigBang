@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import Styles from './App.module.css'
 import Input from './Input'
 import Summary from './Summary'
@@ -20,16 +21,16 @@ function App() {
   }
   //#endregion
   
-  return (
-    <main className={Styles.app}>
-      <div className={Styles.container}>
-        <h1 className={Styles.title}>Simulá tu crédito</h1>
-        <Input {...amount}/>
-        <Input {...term}/>
-        <Summary />
-      </div>
-    </main>
-  );
+  const [selectedAmount, reportAmount] = useState(0);
+  const [selectedTerm, reportTerm] = useState(0);
+  return (<main className={Styles.app}>
+    <div className={Styles.container}>
+      <h1 className={Styles.title}>Simulá tu crédito</h1>
+      <Input {...amount} reportAmount={reportAmount}/>
+      <Input {...term} reportAmount={reportTerm}/>
+      <Summary selectedAmount={selectedAmount} selectedTerm={selectedTerm} />
+    </div>
+  </main>);
 }
 
 export default App;

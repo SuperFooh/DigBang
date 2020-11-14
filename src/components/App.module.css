@@ -7,6 +7,7 @@
     display: block;
     min-width: 500px;
     height: 70%;
+    min-height: 675px;
     max-height: 70vh; /*preserve aspect ratio*/
     max-width: calc(70vh * var(--aspect-ratio));
     width: 70%;
@@ -18,6 +19,8 @@
     background: rgb(0,59,103); /*fallback*/
     background: 
         linear-gradient(0deg, #003b67,#074f84 100%  0%);
+    box-shadow:
+        8px 12px 20px 2px rgba(0,0,0,.7);
 }
 
 .container{
@@ -25,6 +28,7 @@
     width: 100%;
     height: 100%;
     font-family: "Montserrat", sans-serif;
+    
 }
 
 .title{

@@ -1,36 +1,23 @@
-import {useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import Styles from './Input.module.css'
-import formatCurrency from '../utils/formatCurrency'
 import Slider from 'rc-slider';
+import useSlider from '../hooks/useSlider'
 import 'rc-slider/assets/index.css';
+import formatCurrency from '../utils/formatCurrency'
 
 
+const Input = ({minValue, maxValue, text, base, currency, reportAmount}) => {
 
-const Input = ({minValue, maxValue, text, base, currency}) => {
-    const [amount, setAmount ] = useState(0);
-    
-    useEffect(() => setAmount(
-        currency 
-            ? formatCurrency(parseInt(Math.ceil(maxValue /2))) 
-            : parseInt(Math.ceil(maxValue  /2))
-    ), [currency, maxValue])
-
-    const changeAmount = e => {
-        const inputAmount = e.currentTarget.value;
-        /[0-9]/.test(inputAmount) 
-            ? setAmount(inputAmount)
-            : setAmount(currency ? formatCurrency(0) : 0);   
-    }
-    const sliderChange = value => {setAmount(currency ? formatCurrency(value) : value)}
-
+    let {amount, formattedAmount, amountChangedHanlder} = useSlider(minValue)
+    useEffect(() => reportAmount(amount),[amount, reportAmount])
+    //#region slider's metaData
     const markStyle = {
         whiteSpace: "nowrap",
         fontSize: "18px",
         fontWeight: "400",
         color: "#fffffd",
-        padding: ".5em"
+        padding: ".5em",
     }
-
     const marks ={
         [minValue] : {
             style: markStyle,
@@ -41,6 +28,7 @@ const Input = ({minValue, maxValue, text, base, currency}) => {
             label: <span>{`${currency ? formatCurrency(maxValue): maxValue}`}</span>
         }
     }
+    //#endregion
 
     return (
         <div className={Styles.container}>
@@ -48,21 +36,27 @@ const Input = ({minValue, maxValue, text, base, currency}) => {
                 <label  htmlFor={text} className={Styles.title}>{text}</label>
                 <input 
                     id={text}
-                    type="text" 
-                    value={amount}
+                    type="text"
+                    value={currency ? formattedAmount : amount}
                     className={Styles.amount}
-                    onChange={changeAmount}
+                    onChange={amountChangedHanlder}
                     required
                 />
             </div>
             < div className={Styles.sliderContainer}>
                 <Slider
-                    onChange={sliderChange} 
+                    className={Styles.slider}
+                    onChange={amountChangedHanlder}
                     defaultValue={amount}
+                    value={amount}
                     step={base}
-                    min={minValue} 
+                    min={minValue}
                     max={maxValue}
                     marks={marks}
+                    railStyle={{ borderRadius: "0"}}
+                    trackStyle={{backgroundColor:"#fffffd"}}
+                    dotStyle={{display: "none"}}
+                    handleStyle={{border: "none", backgroundColor: "#fffffd"}}
                 />
             </div>
         </div>
