@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/DigBang/static/css/main.223f9874.chunk.css",
+    "main.js": "/DigBang/static/js/main.6e955836.chunk.js",
+    "main.js.map": "/DigBang/static/js/main.6e955836.chunk.js.map",
+    "runtime-main.js": "/DigBang/static/js/runtime-main.d92b5fea.js",
+    "runtime-main.js.map": "/DigBang/static/js/runtime-main.d92b5fea.js.map",
+    "static/css/2.7fe95f8e.chunk.css": "/DigBang/static/css/2.7fe95f8e.chunk.css",
+    "static/js/2.1dce397b.chunk.js": "/DigBang/static/js/2.1dce397b.chunk.js",
+    "static/js/2.1dce397b.chunk.js.map": "/DigBang/static/js/2.1dce397b.chunk.js.map",
+    "index.html": "/DigBang/index.html",
+    "static/css/2.7fe95f8e.chunk.css.map": "/DigBang/static/css/2.7fe95f8e.chunk.css.map",
+    "static/css/main.223f9874.chunk.css.map": "/DigBang/static/css/main.223f9874.chunk.css.map",
+    "static/js/2.1dce397b.chunk.js.LICENSE.txt": "/DigBang/static/js/2.1dce397b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d92b5fea.js",
+    "static/css/2.7fe95f8e.chunk.css",
+    "static/js/2.1dce397b.chunk.js",
+    "static/css/main.223f9874.chunk.css",
+    "static/js/main.6e955836.chunk.js"
+  ]
+}
