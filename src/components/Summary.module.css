@@ -1,0 +1,55 @@
+.container{
+    margin: 0 4rem;
+   
+}
+.totalContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #00355d;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    padding: .7em 1.5em;
+    color: #fffffd;
+}
+.totalDescription{
+    font-size: 16px;
+    font-weight: 700;
+}
+.totalAmount{
+    font-size: 42px;
+    font-weight: 900;
+}
+.callsToAction{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.getCredit,.cuotas{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: #fffffd;
+}
+.getCredit{
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: #17aa8d;
+    margin-right: 1rem;
+    font-size: 24px;
+    padding: .3em;
+    font-weight: 700;
+}
+.cuotas{
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: #0b548a;
+    font-size: 18px;
+    white-space: normal;
+    max-width: 35%;
+    padding: .5em;
+    font-weight: 700;
+    line-height: 1em;
+}
